@@ -56,7 +56,7 @@ export default {
         let response = await axios.get("https://pokeapi.co/api/v2/pokemon/" + this.$route.query.id + "/");
         this.result = response.data;
         this.nombreImg = this.result.sprites.front_default;
-        var pokemon = { id: this.result.id, nombre: this.result.name, experiencia: this.result.base_experience, altura: this.result.height, peso: this.result.weight};
+        var pokemon = { id: this.result.id, nombre: this.result.name, experiencia: this.result.base_experience, altura: this.result.height, peso: this.result.weight };
         this.tiposPok = this.result.types;
         this.abilitiesPok = this.result.abilities;
         this.arrayPokemon.push(pokemon);
@@ -123,6 +123,9 @@ th.active .arrow {
     height: 30%;
     margin-left: 22rem;
     margin-top: 8rem;
+    transform: translateY(-10%);
+    animation: floater 1.5s infinite;
+    transition: ease 0.5s;
 }
 
 .fondo {
@@ -132,5 +135,22 @@ th.active .arrow {
     height: 70%;
     margin-left: 19rem;
     margin-bottom: 30rem;
+}
+
+@keyframes floater {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0);
+        transform: translatey(0px);
+    }
+
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0);
+        transform: translatey(-5px);
+    }
+
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0);
+        transform: translatey(0px);
+    }
 }
 </style>
