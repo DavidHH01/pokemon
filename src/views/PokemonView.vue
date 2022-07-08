@@ -187,8 +187,7 @@ export default {
 }
 
 .buscar {
-    background: #FFCC00;
-    color: #0A285F;
+    background: rgb(84, 154, 187);
     margin-top: 3rem;
     padding: 1rem 0;
     cursor: pointer;
